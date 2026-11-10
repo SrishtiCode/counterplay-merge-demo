@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from shop.pricing import apply_discount, with_tax
+from shop.pricing import apply_discount, format_price, with_tax
 
 
 @dataclass
@@ -17,6 +17,11 @@ def line_total(line: Line) -> int:
     if line.quantity < 1:
         raise ValueError("a line has at least one item")
     return line.unit_cents * line.quantity
+
+
+def format_line(line: Line) -> str:
+    """Line("pen", 150, 4) -> 'pen x4 €6.00'."""
+    return f"{line.item} x{line.quantity} {format_price(line_total(line))}"
 
 
 def order_total(lines: list[Line], discount_percent: int = 0) -> int:
