@@ -23,3 +23,8 @@ def order_total(lines: list[Line], discount_percent: int = 0) -> int:
     """The order's total with the discount, then tax."""
     subtotal = sum(line_total(line) for line in lines)
     return with_tax(apply_discount(subtotal, discount_percent))
+
+
+def item_count(lines: list[Line]) -> int:
+    """How many items the order holds, across all its lines."""
+    return sum(line.quantity for line in lines)

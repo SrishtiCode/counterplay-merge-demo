@@ -1,6 +1,6 @@
 import pytest
 
-from shop.orders import Line, line_total, order_total
+from shop.orders import Line, item_count, line_total, order_total
 
 
 def test_line_total():
@@ -13,3 +13,8 @@ def test_order_total():
     lines = [Line("pen", 150, 4), Line("book", 1200)]
     # 1800, minus 10 % = 1620, plus 18 % tax = 1911.
     assert order_total(lines, discount_percent=10) == 1911
+
+
+def test_item_count():
+    assert item_count([Line("pen", 150, 4), Line("book", 1200)]) == 5
+    assert item_count([]) == 0
