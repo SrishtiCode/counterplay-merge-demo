@@ -1,6 +1,6 @@
 """Prices in cents, so nothing is lost to rounding."""
 
-TAX_RATE_PERCENT = 18
+TAX_RATE_PERCENT = 20
 
 
 def format_price(cents: int) -> str:

@@ -11,5 +11,5 @@ def test_line_total():
 
 def test_order_total():
     lines = [Line("pen", 150, 4), Line("book", 1200)]
-    # 1800, minus 10 % = 1620, plus 18 % tax = 1911.
-    assert order_total(lines, discount_percent=10) == 1911
+    # 1800, minus 10 % = 1620, plus 20 % tax = 1944.
+    assert order_total(lines, discount_percent=10) == 1944

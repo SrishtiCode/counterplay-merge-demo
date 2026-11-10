@@ -17,4 +17,4 @@ def test_apply_discount():
 
 
 def test_with_tax():
-    assert with_tax(1000) == 1180
+    assert with_tax(1000) == 1200
