@@ -1,4 +1,4 @@
-from shop.format import format_price, format_quantity
+from shop.format import format_discount, format_price, format_quantity
 
 
 def test_format_price():
@@ -23,3 +23,8 @@ def test_format_quantity():
 def test_format_quantity_noun():
     assert format_quantity(1, noun="bag") == "1 bag"
     assert format_quantity(3, noun="order") == "3 orders"
+
+
+def test_format_discount():
+    assert format_discount(10) == "10% off"
+    assert format_discount(5) == "5% off"
