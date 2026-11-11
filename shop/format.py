@@ -12,3 +12,8 @@ def format_quantity(count: int, noun: str = "item") -> str:
     """A count with its noun, like "1 item" or "1,200 items"."""
     plural = noun if count == 1 else f"{noun}s"
     return f"{count:,} {plural}"
+
+
+def format_discount(percent: int) -> str:
+    """A percentage discount as text, like "10% off"."""
+    return f"{percent}% off"
